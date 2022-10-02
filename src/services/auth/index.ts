@@ -1,15 +1,6 @@
 import serverConfig from "../../server.config";
 import * as stytch from "stytch";
-
-const authProjectId =
-  serverConfig.env === "production"
-    ? "project-live-feb44c35-44a4-491a-9661-594b6587ba82"
-    : "project-test-6428e161-93d3-4d1e-8523-a6cf10f7060b";
-
-const authSecret =
-  serverConfig.env === "production"
-    ? process.env.STYTCH_SECRET!
-    : "secret-test-KeaO6ShmnNLRVpal5xmDmKxv-BUwXh97mwE=";
+import { authProjectId, authSecret } from "./credentials";
 
 const stytchClient = new stytch.Client({
   project_id: authProjectId,
